@@ -1,0 +1,19 @@
+- name: C
+  percentage: 90
+  color: success
+
+- name: C++
+  percentage: 90
+  color: success
+
+- name: Python
+  percentage: 70
+  color: success
+
+- name: Java
+  percentage: 70
+  color: success
+
+- name: HTML/CSS 
+  percentage: 70
+  color: success

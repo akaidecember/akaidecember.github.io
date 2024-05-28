@@ -1,0 +1,16 @@
+- name: ML/AI
+  percentage: 80
+  color: 
+
+- name: Cloud
+  percentage: 90
+  color: 
+
+- name: DevOps
+  text: bla
+  percentage: 80
+  color: 
+
+- name: APIs
+  percentage: 90
+  color: 
