@@ -1,19 +1,35 @@
-- name: C
-  percentage: 90
-  color: success
+- name: Python & Data Engineering
+  level: Advanced
+  focus: FastAPI and Django services, data workflows, and automated testing for high-volume systems.
+  tools:
+    - FastAPI
+    - Django
+    - Kafka
+    - Flink
+    - Pytest
 
-- name: C++
-  percentage: 90
-  color: success
+- name: Java & Spring Boot
+  level: Advanced
+  focus: Distributed microservices for financial and customer workflows with strict SLAs.
+  tools:
+    - Spring Boot
+    - PostgreSQL
+    - JUnit
+    - OpenTelemetry
 
-- name: Python
-  percentage: 70
-  color: success
+- name: TypeScript & Node.js
+  level: Advanced
+  focus: API-first services and event integrations powering React and Next.js experiences.
+  tools:
+    - Express
+    - React
+    - Next.js
+    - REST APIs
 
-- name: Java
-  percentage: 70
-  color: success
-
-- name: HTML/CSS 
-  percentage: 70
-  color: success
+- name: C / C++
+  level: Proficient
+  focus: Systems-level telemetry, firmware tooling, and performance-sensitive components.
+  tools:
+    - Debugging
+    - Concurrency
+    - Profiling

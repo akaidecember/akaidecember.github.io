@@ -1,15 +1,47 @@
-- name: ML/AI
-  percentage: 80
-  color: 
+- name: Cloud & Platform (AWS)
+  level: Advanced
+  focus: Running containerized services on EKS/ECS with resilient networking and edge delivery.
+  tools:
+    - EKS
+    - ECS
+    - EC2
+    - S3
+    - CloudFront
+    - Route 53
 
-- name: Cloud
-  percentage: 90
-  color: 
+- name: DevOps & Automation
+  level: Advanced
+  focus: CI/CD pipelines, infrastructure-as-code, and dependable rollout strategies.
+  tools:
+    - GitHub Actions
+    - Jenkins
+    - Docker
+    - Kubernetes
+    - Terraform
 
-- name: DevOps
-  percentage: 80
-  color: 
+- name: Observability
+  level: Advanced
+  focus: Tracing, metrics, and logs that keep customer journeys transparent and debuggable.
+  tools:
+    - OpenTelemetry
+    - Prometheus
+    - Grafana
+    - ELK Stack
 
-- name: APIs
-  percentage: 90
-  color: 
+- name: Data Streaming & Messaging
+  level: Advanced
+  focus: Building resilient pipelines for personalization and operational insights on live events.
+  tools:
+    - Kafka
+    - Flink
+    - Redis
+    - PostgreSQL
+
+- name: APIs & Integrations
+  level: Advanced
+  focus: RESTful design, contract-first development, and operational dashboards for customer teams.
+  tools:
+    - REST APIs
+    - Experimentation
+    - A/B testing
+    - Dashboarding

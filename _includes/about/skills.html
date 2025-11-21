@@ -1,0 +1,26 @@
+<div class="col-lg">
+  <h2 class="mb-3">{{ include.title }}</h2>
+
+  {% for skill in include.source %}
+  <div class="card bg-themed border-0 shadow-sm mb-3">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5 class="mb-0">{{ skill.name }}</h5>
+        {% if skill.level %}
+        <span class="badge badge-pill badge-info">{{ skill.level }}</span>
+        {% endif %}
+      </div>
+      {% if skill.focus %}
+      <p class="mb-2 text-muted">{{ skill.focus }}</p>
+      {% endif %}
+      {% if skill.tools %}
+      <div class="d-flex flex-wrap">
+        {% for tool in skill.tools %}
+        <span class="badge badge-light text-themed border mr-2 mb-2">{{ tool }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
