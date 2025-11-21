@@ -1,9 +1,26 @@
-- title: Firmware Validation Intern, Intel Corporation
+- title: Software Engineer, Intel Corporation
   from: 2020
   to: 2021
-  description: (Dec 2020 to Dec 2021) Firmware Validation Intern at Intel, under the firmware security team. Responsible for creating custom SSD firmware solutions in C++, enhancing SMART health, optimizing PCIe logging, and stream-lining panic state drive recovery. Also constructed unit tests for proprietary SSD firmware. Automated CI/CD pipelines with Jenkins to streamline code deployment.
+  description: (Dec 2020 to Dec 2021) Software Engineer at Intel, under the NSG security team. Responsible for creating custom SSD firmware solutions in C++, enhancing SMART health, optimizing PCIe logging, and stream-lining panic state drive recovery. Also constructed unit tests for proprietary SSD firmware. Automated CI/CD pipelines with Jenkins to streamline code deployment.
 
-- title: Software Developer Intern, Allusion Systems Pvt. Ltd
+- title: Software Developer, Allusion Systems Pvt. Ltd
+  from: 2022
+  to: 2023
+  description: (Jan 2022 – Aug 2023) Full-stack developer on the supply-chain automation platform. Built MERN microservices, Kafka-Flink pipelines, optimized APIs, deployed containerized services, and improved performance and reliability.
+
+- title: Research Assistant, SJSU
+  from: 2024
+  to: 2024
+  description: (Aug 2024 – Nov 2024) Graduate Research Assistant working on deepfake detection using CNNs and Vision Transformers. Implemented real-time detection pipelines using Python, OpenCV, TensorFlow, and PyTorch.
+
+- title: Software Engineer, American Express xWF
   from: 2022
   to: 2022
-  description: (May 2022 to Aug 2022) Software Developer Intern at Allusion Systems.
+  description: (Dec 2024 – May 2025) Backend engineer in the Global Offers Loyalty team. Built Spring Boot services, CSV ingestion workflows, PostgreSQL + Apache Ignite caching, and optimized SQL query performance.
+
+- title: Software Engineer, KGS Technology Group, Inc
+  from: 2025
+  to: Present
+  description: (July 2025 – Present) Software Engineer working on backend and distributed systems for Sikka.ai and client platforms. Building API services, improving reliability, and shipping production features across microservices.
+
+
