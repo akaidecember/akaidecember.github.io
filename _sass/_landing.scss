@@ -1,0 +1,259 @@
+// Home hero space animation (homepage only)
+.landing-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  padding: 3rem 1.5rem;
+  background: radial-gradient(circle at 20% 20%, rgba(0, 123, 255, 0.12), transparent 30%),
+              radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.08), transparent 26%),
+              linear-gradient(135deg, #030b1a, #0a1c3a 55%, #050915);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.landing-content {
+  position: relative;
+  z-index: 2;
+}
+
+.space-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.stars {
+  position: absolute;
+  inset: -20%;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255, 255, 255, 0.75), transparent 45%),
+    radial-gradient(1px 1px at 30% 40%, rgba(255, 255, 255, 0.7), transparent 45%),
+    radial-gradient(1.5px 1.5px at 70% 30%, rgba(255, 255, 255, 0.8), transparent 45%),
+    radial-gradient(1px 1px at 90% 10%, rgba(255, 255, 255, 0.7), transparent 45%),
+    radial-gradient(1px 1px at 50% 70%, rgba(255, 255, 255, 0.8), transparent 45%),
+    radial-gradient(1px 1px at 80% 85%, rgba(255, 255, 255, 0.65), transparent 45%),
+    radial-gradient(2px 2px at 20% 80%, rgba(255, 255, 255, 0.6), transparent 45%),
+    radial-gradient(1.5px 1.5px at 65% 55%, rgba(255, 255, 255, 0.7), transparent 45%);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: star-drift 26s linear infinite;
+}
+
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
+  animation: float-soft 8s ease-in-out infinite alternate;
+}
+
+.planet-ringed {
+  width: 130px;
+  height: 130px;
+  left: 8%;
+  top: 48%;
+  background: radial-gradient(circle at 30% 30%, #3aa6ff, #0a66c2 65%, #04315e);
+  animation-delay: 1s;
+
+  .ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 220px;
+    height: 70px;
+    margin-left: -110px;
+    margin-top: -35px;
+    border-radius: 50%;
+    border: 8px solid rgba(255, 255, 255, 0.45);
+    transform: rotate(-12deg) scaleY(0.45);
+    transform-origin: center;
+    opacity: 0.85;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.15), transparent 55%);
+  }
+}
+
+.planet-moons {
+  width: 110px;
+  height: 110px;
+  right: 10%;
+  top: 18%;
+  background: radial-gradient(circle at 40% 40%, #ffbf6b, #ff8c42 60%, #b75c0a);
+  animation-duration: 9.5s;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px dashed rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &::before {
+    width: 160px;
+    height: 160px;
+  }
+
+  &::after {
+    width: 190px;
+    height: 190px;
+    opacity: 0.18;
+  }
+
+  .moon {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #f1f1f1;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+  }
+
+  .moon-one {
+    top: -8px;
+    left: 20px;
+    animation: orbit 12s linear infinite;
+    transform-origin: 40px 40px;
+  }
+
+  .moon-two {
+    bottom: -10px;
+    right: 10px;
+    animation: orbit 16s linear infinite reverse;
+    transform-origin: -20px -20px;
+  }
+}
+
+.planet-far {
+  width: 80px;
+  height: 80px;
+  right: 30%;
+  bottom: 4%;
+  background: radial-gradient(circle at 50% 50%, #8f7cff, #5f3dc4 60%, #2a175f);
+  animation-duration: 7s;
+}
+
+.comet,
+.asteroid {
+  position: absolute;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9));
+  height: 2px;
+  border-radius: 50%;
+  opacity: 0;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.75));
+}
+
+.comet::after,
+.asteroid::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  top: -2px;
+  right: -2px;
+}
+
+.comet-one { top: 12%; left: -10%; animation: comet-run 18s linear infinite; }
+.comet-two { top: 55%; left: -15%; animation: comet-run 24s linear infinite 4s; }
+.comet-three { top: 80%; left: -5%; animation: comet-run 20s linear infinite 9s; }
+
+.asteroid {
+  height: 3px;
+  width: 60px;
+  opacity: 0.9;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(168, 188, 255, 0.9));
+}
+
+.asteroid-one { top: 25%; left: -12%; animation: comet-run 30s linear infinite 6s; }
+.asteroid-two { top: 65%; left: -18%; animation: comet-run 28s linear infinite 12s; }
+.asteroid-three { top: 40%; left: -22%; animation: comet-run 34s linear infinite 17s; }
+
+.laptop-drifter {
+  position: absolute;
+  width: 36px;
+  height: 24px;
+  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    inset 0 0 0 1000px rgba(255, 255, 255, 0.08),
+    0 0 10px rgba(255, 255, 255, 0.35);
+  top: 32%;
+  left: -12%;
+  transform: perspective(160px) rotateX(18deg) rotateY(-24deg) rotateZ(6deg);
+  animation: laptop-drift 30s linear infinite 8s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: -2px;
+    width: 40px;
+    height: 10px;
+    background: rgba(200, 220, 255, 0.4);
+    border-radius: 0 0 6px 6px;
+    transform: perspective(120px) rotateX(-70deg);
+    box-shadow: 0 0 10px rgba(200, 220, 255, 0.4);
+  }
+}
+
+@keyframes star-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(5%, 5%, 0); }
+}
+
+@keyframes float-soft {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-10px); }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(0); }
+  to   { transform: rotate(360deg) translateX(0); }
+}
+
+@keyframes comet-run {
+  0%   { transform: translate3d(0, 0, 0) scale(0.8); opacity: 0; }
+  10%  { opacity: 1; }
+  50%  { opacity: 1; }
+  100% { transform: translate3d(140vw, -20vh, 0) scale(1.05); opacity: 0; }
+}
+
+@keyframes laptop-drift {
+  0%   { transform: translate3d(0, 0, 0) perspective(160px) rotateX(18deg) rotateY(-24deg) rotateZ(6deg); opacity: 0; }
+  10%  { opacity: 1; }
+  50%  { opacity: 1; transform: translate3d(120vw, -10vh, 0) perspective(160px) rotateX(12deg) rotateY(-10deg) rotateZ(4deg); }
+  100% { opacity: 0; transform: translate3d(150vw, -20vh, 0) perspective(160px) rotateX(20deg) rotateY(-4deg) rotateZ(2deg); }
+}
+
+// Fine Circle Responsive Image
+// Inspired by https://stackoverflow.com/a/6615994/10194811
+
+#container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+#dummy {
+  padding-top: 100%; /* 1:1 aspect ratio */
+}
+
+#element {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.circle-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
