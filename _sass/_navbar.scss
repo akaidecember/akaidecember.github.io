@@ -18,6 +18,12 @@
   }
 }
 
+.navbar-brand {
+  &::after {
+    background: white; // brand underline in white only
+  }
+}
+
 .nav-item.active {
   font-weight: bold;
 

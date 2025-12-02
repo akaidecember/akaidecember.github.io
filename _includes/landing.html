@@ -1,15 +1,42 @@
-<div class="row justify-content-center align-items-center p-4">
-  <div class="col-lg-4 col-md-6 text-center mt-4">
+<section class="landing-hero">
+  <div class="space-layer">
+    <div class="stars"></div>
 
-    <!-- Fine Circle Responsive Image -->
-    <div id="container" class="my-2">
-      <div id="dummy"></div>
-      <div id="element">
-        <img src="{{ site.author.image }}" alt="{{ site.title }}" class="circle-image wow animated zoomIn" data-wow-delay=".1s">
-      </div>
+    <div class="planet planet-ringed">
+      <span class="ring"></span>
     </div>
 
-    <p class="text-muted wow animated slideInUp" data-wow-delay=".15s">{{ site.description }}</p>
+    <div class="planet planet-moons">
+      <span class="moon moon-one"></span>
+      <span class="moon moon-two"></span>
+    </div>
 
+    <div class="planet planet-far"></div>
+
+    <div class="comet comet-one"></div>
+    <div class="comet comet-two"></div>
+    <div class="comet comet-three"></div>
+
+    <div class="laptop-drifter"></div>
+
+    <div class="asteroid asteroid-one"></div>
+    <div class="asteroid asteroid-two"></div>
+    <div class="asteroid asteroid-three"></div>
   </div>
-</div>
+
+  <div class="landing-content row justify-content-center align-items-center p-4">
+    <div class="col-lg-4 col-md-6 text-center mt-4">
+
+      <!-- Fine Circle Responsive Image -->
+      <div id="container" class="my-2">
+        <div id="dummy"></div>
+        <div id="element">
+          <img src="{{ site.author.image }}" alt="{{ site.title }}" class="circle-image wow animated zoomIn" data-wow-delay=".1s">
+        </div>
+      </div>
+
+      <p class="text-muted wow animated slideInUp" data-wow-delay=".15s">{{ site.description }}</p>
+
+    </div>
+  </div>
+</section>

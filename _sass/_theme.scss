@@ -13,7 +13,10 @@
 }
 
 .navbar-themed {
-  .navbar-brand,
+  .navbar-brand {
+    @include themed(color, $primary, lighten($primary, 10%));
+  }
+
   .navbar-nav .nav-link.active {
     @include themed(color, $text-black, $text-white);
   }
@@ -30,4 +33,3 @@
 .bg-themed {
   @include themed(background-color, $light, $dark);
 }
-
