@@ -1,0 +1,23 @@
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <h2 class="mb-4">Browse by tag</h2>
+    {% assign tags = site.tags | sort %}
+    <div class="mb-4">
+      {% for tag in tags %}
+        <a class="badge badge-primary mr-2 mb-2" href="#{{ tag[0] | slugify }}">{{ tag[0] }} ({{ tag[1].size }})</a>
+      {% endfor %}
+    </div>
+
+    {% for tag in tags %}
+      <h4 id="{{ tag[0] | slugify }}" class="mt-4">{{ tag[0] }}</h4>
+      <ul class="list-unstyled">
+        {% for post in tag[1] %}
+          <li class="mb-1">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <small class="text-muted">— {{ post.date | date: "%B %-d, %Y" }}</small>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </div>
+</div>

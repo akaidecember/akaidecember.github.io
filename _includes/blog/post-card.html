@@ -1,0 +1,18 @@
+<article class="card bg-themed glass-card border-0 shadow-sm mb-4 post-card-entry"
+         data-title="{{ post.title | downcase }}"
+         data-tags="{{ post.tags | join: ',' | downcase }}">
+  <div class="card-body">
+    <h4 class="card-title mb-1">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </h4>
+    {% if post.tags %}
+      <div class="d-flex flex-wrap mb-2">
+        {% for tag in post.tags %}
+          <span class="badge post-tag mr-2 mb-2">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <p class="card-text text-muted mb-2">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+    <p class="text-muted mb-0">{{ post.date | date: "%B %-d, %Y" }}</p>
+  </div>
+</article>

@@ -1,0 +1,12 @@
+{% assign socials = site.data.social-media %}
+<div class="d-flex justify-content-center mb-3">
+  {% for entry in socials %}
+    {% assign key = entry[0] %}
+    {% assign meta = entry[1] %}
+    {% if site.author[key] %}
+      <a class="mx-2 social" href="{{ meta.url }}{{ site.author[key] }}" target="_blank" rel="noopener" aria-label="{{ key }}">
+        <i class="{{ meta.icon }}" style="color: #{{ meta.color }};"></i>
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>

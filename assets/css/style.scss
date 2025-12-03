@@ -1,0 +1,172 @@
+---
+# This front matter ensures Jekyll processes SCSS into CSS.
+---
+
+@import "variables";
+@import "theme";
+@import "navbar";
+@import "landing";
+@import "timeline";
+
+body {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  @include themed(color, $text-black, $text-white);
+  min-height: 100vh;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    @include themed(
+      background,
+      (
+        radial-gradient(ellipse at 18% 12%, rgba(0, 123, 255, 0.12), transparent 32%),
+        radial-gradient(ellipse at 82% 18%, rgba(0, 0, 0, 0.08), transparent 30%),
+        linear-gradient(180deg, #eef3fb 0%, #dfe6f4 45%, #eef3fb 80%, #d7e0ee 100%)
+      ),
+      (
+        radial-gradient(ellipse at 18% 12%, rgba(0, 123, 255, 0.18), transparent 32%),
+        radial-gradient(ellipse at 82% 18%, rgba(255, 255, 255, 0.08), transparent 30%),
+        linear-gradient(180deg, #0a1a33 0%, #050b16 45%, #081a35 80%, #03060d 100%)
+      )
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+  }
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+  &:hover {
+    color: lighten($primary, 10%);
+    text-decoration: none;
+  }
+}
+
+.project-card {
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.project-thumb {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-top-left-radius: $rounded-borders;
+  border-top-right-radius: $rounded-borders;
+}
+
+.projects-grid {
+  margin-left: -12px;
+  margin-right: -12px;
+
+  > [class*="col-"] {
+    padding: 0 12px 24px 12px;
+  }
+}
+
+.glass-card {
+  @include themed(
+    background-color,
+    rgba(255, 255, 255, 0.55),
+    rgba(255, 255, 255, 0.08)
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
+}
+
+.projects-masonry {
+  column-count: 3;
+  column-gap: 24px;
+  @media (max-width: 1199px) {
+    column-count: 2;
+  }
+  @media (max-width: 767px) {
+    column-count: 1;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.project-tool {
+  background: rgba($primary, 0.12);
+  color: $primary;
+  font-weight: 600;
+  border: 1px solid rgba($primary, 0.35);
+}
+
+.blog-controls .form-control {
+  background: rgba(255, 255, 255, 0.08);
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.blog-controls .form-control:focus {
+  box-shadow: 0 0 0 0.1rem rgba($primary, 0.3);
+}
+
+.post-tag {
+  background: rgba($primary, 0.12);
+  color: $primary;
+  border: 1px solid rgba($primary, 0.35);
+  font-weight: 600;
+}
+
+// Code blocks & inline code
+pre,
+code {
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+pre {
+  padding: 14px;
+  border-radius: 10px;
+  overflow-x: auto;
+  margin: 1rem 0;
+  @include themed(
+    background-color,
+    #f5f7ff,
+    #0f172a
+  );
+  @include themed(
+    color,
+    #111827,
+    #e5e7eb
+  );
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+code {
+  padding: 0.15rem 0.35rem;
+  border-radius: 6px;
+  @include themed(
+    background-color,
+    #e5e7eb,
+    #111827
+  );
+  @include themed(color, #111827, #e5e7eb);
+}
+
+/* Basic syntax color tweaks for Rouge-generated spans */
+pre .k, pre .kd, pre .kn, pre .kp, pre .kr { color: #2563eb; } /* keywords */
+pre .s, pre .sb, pre .sc, pre .s1, pre .s2 { color: #16a34a; } /* strings */
+pre .nc, pre .na, pre .nf { color: #7c3aed; } /* classes/functions */
+pre .c, pre .cm, pre .cp { color: #6b7280; font-style: italic; } /* comments */
+pre .mi, pre .mf, pre .mh { color: #dc2626; } /* numbers */
