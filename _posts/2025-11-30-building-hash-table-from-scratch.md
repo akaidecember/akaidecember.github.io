@@ -1,12 +1,10 @@
 ---
 layout: post
-title: "Building a Hash Table From Scratch,  My Walkthrough"
+title: "Building a Hash Table From Scratch, My Walkthrough"
 date: 2025-11-30
 description: "Following James Routley’s “Write a Hash Table” repo and notes from rebuilding it myself"
 tags: [c, data-structures, hashing]
 ---
-
-# Building a Hash Table From Scratch,  My Walkthrough
 
 *Following James Routley’s “Write a Hash Table” repo*  
 *By Anshul Kumar Shandilya*

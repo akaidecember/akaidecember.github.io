@@ -33,3 +33,10 @@
 .bg-themed {
   @include themed(background-color, $light, $dark);
 }
+
+.skill-tag {
+  @include themed(color, $text-black, $text-black);
+  @include themed(background-color, lighten($light, 2%), rgba(255, 255, 255, 0.9));
+  border-color: rgba(0, 0, 0, 0.05);
+  font-weight: 600;
+}

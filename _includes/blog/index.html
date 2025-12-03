@@ -1,0 +1,63 @@
+{% assign posts_list = site.posts %}
+{% assign tags_list = site.tags %}
+
+<div class="blog-controls d-flex align-items-center mb-4">
+  <input id="post-search" type="text" class="form-control mr-2" placeholder="Search posts...">
+  <button id="search-btn" class="btn btn-primary mr-2" type="button"><i class="fas fa-search"></i></button>
+  <button id="tags-toggle" class="btn btn-outline-secondary" type="button" aria-expanded="false">
+    <i class="fas fa-tags"></i>
+  </button>
+</div>
+
+<div id="tags-panel" class="glass-card p-3 mb-4 d-none">
+  {% for tag in tags_list %}
+    <div class="mb-3">
+      <h5 class="mb-2 text-capitalize">{{ tag[0] }}</h5>
+      <ul class="mb-0 pl-3">
+        {% for post in tag[1] %}
+          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="row" id="post-grid">
+  {% for post in posts_list %}
+    <div class="col-12 col-md-6 col-xl-4 d-flex post-card-wrapper">
+      <div class="w-100">
+        {% include blog/post-card.html post=post %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+  (function() {
+    const searchInput = document.getElementById('post-search');
+    const searchBtn = document.getElementById('search-btn');
+    const tagsToggle = document.getElementById('tags-toggle');
+    const tagsPanel = document.getElementById('tags-panel');
+    const cards = Array.from(document.querySelectorAll('.post-card-wrapper'));
+
+    function filterPosts() {
+      const query = (searchInput.value || '').trim().toLowerCase();
+      cards.forEach(card => {
+        const entry = card.querySelector('.post-card-entry');
+        const title = entry.dataset.title || '';
+        const tags = entry.dataset.tags || '';
+        const match = title.includes(query) || tags.includes(query);
+        card.style.display = match ? '' : 'none';
+      });
+    }
+
+    searchInput.addEventListener('input', filterPosts);
+    searchBtn.addEventListener('click', filterPosts);
+
+    tagsToggle.addEventListener('click', function() {
+      const isHidden = tagsPanel.classList.contains('d-none');
+      tagsPanel.classList.toggle('d-none', !isHidden);
+      this.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+    });
+  })();
+</script>

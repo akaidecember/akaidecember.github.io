@@ -1,0 +1,8 @@
+{% assign projects = site.projects %}
+<div class="projects-masonry">
+  {% for project in projects %}
+    <div class="masonry-item">
+      {% include projects/project-card.html project=project %}
+    </div>
+  {% endfor %}
+</div>

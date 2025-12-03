@@ -1,0 +1,44 @@
+{%- assign link = project.external_url | default: project.github | default: project.url -%}
+{%- assign link_target = '' -%}
+{%- if link contains '://' -%}
+  {%- assign link_target = '_blank' -%}
+{%- endif -%}
+
+{%- assign image_src = '' -%}
+{%- assign image_path = project.image | default: '' | strip -%}
+
+{%- if image_path != '' -%}
+  {%- assign clean_path = image_path | replace: '../', '' -%}
+  {%- if clean_path contains '://' -%}
+    {%- assign image_src = clean_path -%}
+  {%- else -%}
+    {%- assign static_path = '/' | append: clean_path -%}
+    {%- assign file_hit = site.static_files | where: 'path', static_path | first -%}
+    {%- if file_hit -%}
+      {%- assign image_src = clean_path | relative_url -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endif -%}
+
+<a class="card bg-themed glass-card border-0 shadow-sm mb-4 project-card d-flex flex-column text-reset"
+   href="{{ link | relative_url }}"
+   {%- if link_target != '' -%} target="{{ link_target }}" rel="noopener"{%- endif -%}>
+
+  {% if image_src and image_src != '' %}
+    <img class="project-thumb" src="{{ image_src }}" alt="{{ project.name | default: project.title }}">
+  {% endif %}
+
+  <div class="card-body d-flex flex-column">
+    <h4 class="card-title mb-2">{{ project.name | default: project.title }}</h4>
+    {% if project.description %}
+      <p class="text-muted mb-0">{{ project.description }}</p>
+    {% endif %}
+    {% if project.tools %}
+      <div class="d-flex flex-wrap mt-3">
+        {% for tool in project.tools %}
+          <span class="badge badge-pill project-tool mr-2 mb-2">{{ tool }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</a>

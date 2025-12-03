@@ -1,0 +1,68 @@
+.timeline {
+  position: relative;
+  padding-left: 34px;
+  margin-top: 12px;
+}
+
+.timeline-legend {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.timeline-label {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.timeline-track {
+  position: absolute;
+  left: 8px;
+  top: 12px;
+  width: 2px;
+  height: calc(100% - 12px);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: $primary;
+  box-shadow: 0 0 0 4px rgba($primary, 0.18);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+.timeline-card {
+  margin-left: 24px;
+  padding: 14px 16px;
+  border-radius: $rounded-borders;
+}
+
+.timeline-date {
+  letter-spacing: 0.06em;
+  font-size: 12px;
+  font-weight: 700;
+  color: $primary;
+  opacity: 0.9;
+  margin-bottom: 6px;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 4px rgba($primary, 0.18);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba($primary, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 4px rgba($primary, 0);
+  }
+}
