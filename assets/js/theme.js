@@ -15,7 +15,7 @@
   }
 
   function currentTheme() {
-    return localStorage.getItem(STORAGE_KEY) || "light";
+    return localStorage.getItem(STORAGE_KEY) || "dark";
   }
 
   function toggleTheme() {

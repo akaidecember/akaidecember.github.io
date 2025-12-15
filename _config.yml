@@ -2,10 +2,10 @@
 title               : Anshul Kumar Shandilya
 description         : >-
                       I turn coffee :coffee: into code,
-                      use tabs over spaces
-                      and never say no to chocolate. 
+                      use tabs over spaces.
                       When I’m not building software, I’m staring into space - 
-                      literally and figuratively.
+                      literally and figuratively, trying to figure out why my code compiles, 
+                      and why the cosmos never gives out straight answers.
 baseurl             : # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : akaidecember/akaidecember.github.io    # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 theme               : null                                   # Theme vendored locally (no remote_theme dependency)
