@@ -11,32 +11,8 @@
 body {
   font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   @include themed(color, $text-black, $text-white);
+  @include themed(background-color, #f4f6fb, #0b1529);
   min-height: 100vh;
-  position: relative;
-
-  &::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    @include themed(
-      background,
-      (
-        radial-gradient(ellipse at 18% 12%, rgba(0, 123, 255, 0.12), transparent 32%),
-        radial-gradient(ellipse at 82% 18%, rgba(0, 0, 0, 0.08), transparent 30%),
-        linear-gradient(180deg, #eef3fb 0%, #dfe6f4 45%, #eef3fb 80%, #d7e0ee 100%)
-      ),
-      (
-        radial-gradient(ellipse at 18% 12%, rgba(0, 123, 255, 0.18), transparent 32%),
-        radial-gradient(ellipse at 82% 18%, rgba(255, 255, 255, 0.08), transparent 30%),
-        linear-gradient(180deg, #0a1a33 0%, #050b16 45%, #081a35 80%, #03060d 100%)
-      )
-    );
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top;
-  }
 }
 
 a {
@@ -88,6 +64,16 @@ a {
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
 }
 
+.card-elevated {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  @include themed(box-shadow, 0 12px 28px rgba(0, 0, 0, 0.12), 0 12px 28px rgba(0, 0, 0, 0.32));
+
+  &:hover {
+    transform: translateY(-4px);
+    @include themed(box-shadow, 0 16px 36px rgba(0, 0, 0, 0.16), 0 16px 36px rgba(0, 0, 0, 0.38));
+  }
+}
+
 .projects-masonry {
   column-count: 3;
   column-gap: 24px;
@@ -137,31 +123,86 @@ code {
 
 pre {
   padding: 14px;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow-x: auto;
   margin: 1rem 0;
   @include themed(
     background-color,
-    #f5f7ff,
-    #0f172a
+    #e5e8f1,
+    #0f1a2e
   );
   @include themed(
     color,
-    #111827,
-    #e5e7eb
+    #0f172a,
+    #e8ecf5
   );
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  @include themed(
+    border,
+    1px solid rgba(0, 0, 0, 0.08),
+    1px solid rgba(255, 255, 255, 0.16)
+  );
 }
 
 code {
   padding: 0.15rem 0.35rem;
-  border-radius: 6px;
+  border-radius: 8px;
   @include themed(
     background-color,
-    #e5e7eb,
-    #111827
+    #e5e8f1,
+    #0f1a2e
+  );
+  @include themed(
+    border,
+    1px solid rgba(0, 0, 0, 0.08),
+    1px solid rgba(255, 255, 255, 0.16)
   );
   @include themed(color, #111827, #e5e7eb);
+}
+
+pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: inherit;
+}
+
+.highlight,
+.highlighter-rouge {
+  background: transparent;
+}
+
+.highlight pre,
+.highlighter-rouge pre {
+  @include themed(background-color, #e5e8f1, #0f1a2e);
+  border: 0;
+}
+
+.highlight pre code,
+.highlighter-rouge pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.highlight pre code span,
+.highlighter-rouge pre code span {
+  background: transparent !important;
+}
+
+.highlight table,
+.highlighter-rouge table,
+.highlight tr,
+.highlighter-rouge tr,
+.highlight td,
+.highlighter-rouge td {
+  background: transparent;
+  border: 0;
 }
 
 /* Basic syntax color tweaks for Rouge-generated spans */
