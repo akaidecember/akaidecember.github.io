@@ -1,4 +1,4 @@
-{% assign projects = site.projects %}
+{% assign projects = site.projects | sort: "date" | reverse %}
 <div class="projects-masonry">
   {% for project in projects %}
     <div class="masonry-item">

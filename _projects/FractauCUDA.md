@@ -1,5 +1,6 @@
 ---
 name: Fractal CUDA
+date: 2025-12-12
 tools: [C++, CUDA, Parallel Programming]
 image:
 description: This project is a CUDA-accelerated Mandelbrot set visualizer implemented in C++. The primary objective of this project is to provide a platform for practicing CUDA programming while exploring various fun ideas associated with fractal visualization.

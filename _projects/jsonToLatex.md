@@ -1,5 +1,6 @@
 ---
 name: JSON to LaTeX PDF Resume Generator
+date: 2025-12-12
 tools: [Python, LaTeX, FastAPI, Docker]
 image:
 description: A JSON-driven resume generation engine that converts structured JSON into a clean LaTeX-styled PDF. Includes API endpoints for resume generation, local Docker deployment, and support for customizable templates.
