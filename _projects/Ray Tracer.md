@@ -1,5 +1,6 @@
 ---
 name: Ray Tracer (Image generation)
+date: 2025-12-12
 tools: [C++, Graphics, Ray Tracing]
 image: 
 description: This project is a ray tracer implementation in C++. It simulates the behavior of light rays to generate realistic images. The ray tracer uses various techniques such as ray-sphere intersection, reflection, and refraction to render scenes with shadows, reflections, and transparency.

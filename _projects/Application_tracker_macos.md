@@ -1,5 +1,6 @@
 ---
 name: Application Tracker Widget for macOS
+date: 2025-12-12
 tools: [Swift, SwiftUI, macOS WidgetKit]
 image:
 description: A macOS widget that helps users track job applications directly from their desktop. The widget offers a clean UI, quick-update controls, and local persistence, enabling streamlined job search management within the macOS ecosystem.
